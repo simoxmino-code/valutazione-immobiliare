@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valutazione Casa Milano-Brugherio | Elena Borghini - RE/MAX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9;
+      color: #111111;
+      line-height: 1.5;
+      padding-bottom: 2rem;
+    }
+
+    /* Header con Logo */
+    header {
+      background: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo-img {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Main Hero Title */
+    .hero-title-section {
+      text-align: center;
+      padding: 2.5rem 1rem 1.5rem;
+    }
+
+    .hero-title-section h1 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .hero-title-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #000000;
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+    }
+
+    /* Card Form Container */
+    .form-container {
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .card-form {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .form-header-title {
+      text-align: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111111;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Form Grid */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #222222;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+      background-color: #ffffff;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      border-color: #dc143c;
+    }
+
+    .form-group select[multiple] {
+      height: 90px;
+      padding: 6px;
+    }
+
+    .form-group select[multiple] option {
+      padding: 4px 8px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: #dc143c;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: #b80f30;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero-title-section h1 { font-size: 1.4rem; }
+      .hero-title-section h2 { font-size: 1.2rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .full-width { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Logo -->
+  <header>
+    <img src="fronte.jpg" alt="RE/MAX Dott.ssa Borghini Elena - Milano Brugherio" class="logo-img">
+  </header>
+
+  <!-- Title Section -->
+  <section class="hero-title-section">
+    <h1>VENDI LA TUA CASA AL MIGLIOR PREZZO?</h1>
+    <h2>VALUTAZIONE GRATUITA</h2>
+  </section>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <div class="card-form">
+      <div class="form-header-title">
+        Richiedi una Valutazione
+      </div>
+
+      <form id="evaluationForm" onsubmit="sendToWhatsApp(event)">
+        <div class="form-grid">
+          
+          <!-- Nome e Cognome -->
+          <div class="form-group full-width">
+            <label for="nome">Nome e Cognome *</label>
+            <input type="text" id="nome" placeholder="Inserisci il tuo Nome e Cognome" required>
+          </div>
+
+          <!-- Indirizzo -->
+          <div class="form-group full-width">
+            <label for="indirizzo">Indirizzo / Zona immobile *</label>
+            <input type="text" id="indirizzo" placeholder="Via, numero civico, comune" required>
+          </div>
+
+          <!-- Tipologia Casa -->
+          <div class="form-group">
+            <label for="tipo">Tipologia Casa (es. trilocale, villa) *</label>
+            <input type="text" id="tipo" placeholder="Tipologia Casa" required>
+          </div>
+
+          <!-- Metri Quadri -->
+          <div class="form-group">
+            <label for="mq">Metri Quadri *</label>
+            <input type="number" id="mq" placeholder="es. 90" required>
+          </div>
+
+          <!-- Piano -->
+          <div class="form-group">
+            <label for="piano">Piano *</label>
+            <input type="text" id="piano" placeholder="1, 2, Attico, Terra..." required>
+          </div>
+
+          <!-- Stato Immobiliare -->
+          <div class="form-group">
+            <label for="stato">Stato Immobiliare *</label>
+            <select id="stato" multiple required>
+              <option value="Ristrutturato">Ristrutturato</option>
+              <option value="Buone condizioni">Buone condizioni</option>
+              <option value="Da ristrutturare">Da ristrutturare</option>
+            </select>
+          </div>
+
+          <!-- Note -->
+          <div class="form-group full-width">
+            <label for="note">Note</label>
+            <textarea id="note" rows="4" placeholder="Inserisci qui eventuali dettagli o informazioni aggiuntive sull'immobile..."></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-submit">INVIA RICHIESTA VALUTAZIONE</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const indirizzo = document.getElementById('indirizzo').value;
+      const tipo = document.getElementById('tipo').value;
+      const mq = document.getElementById('mq').value;
+      const piano = document.getElementById('piano').value;
+      
+      const statoSelect = document.getElementById('stato');
+      const statoSelected = Array.from(statoSelect.selectedOptions).map(opt => opt.value).join(', ');
+      
+      const note = document.getElementById('note').value;
+
+      let message = `*RICHIESTA VALUTAZIONE IMMOBILE*\n\n`;
+      message += `• *Nome e Cognome:* ${nome}\n`;
+      message += `• *Indirizzo/Zona:* ${indirizzo}\n`;
+      message += `• *Tipologia Casa:* ${tipo}\n`;
+      message += `• *Metri Quadri:* ${mq}\n`;
+      message += `• *Piano:* ${piano}\n`;
+      message += `• *Stato Immobiliare:* ${statoSelected}\n`;
+      if (note.trim() !== '') {
+        message += `• *Note:* ${note}\n`;
+      }
+
+      const phoneNumber = "393492396902";
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
