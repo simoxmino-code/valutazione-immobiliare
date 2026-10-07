@@ -126,15 +126,6 @@
       border-color: #dc143c;
     }
 
-    .form-group select[multiple] {
-      height: 90px;
-      padding: 6px;
-    }
-
-    .form-group select[multiple] option {
-      padding: 4px 8px;
-    }
-
     .btn-submit {
       width: 100%;
       background: #dc143c;
@@ -217,10 +208,11 @@
             <input type="text" id="piano" placeholder="1, 2, Attico, Terra..." required>
           </div>
 
-          <!-- Stato Immobiliare -->
+          <!-- Stato Immobile -->
           <div class="form-group">
-            <label for="stato">Stato Immobiliare *</label>
-            <select id="stato" multiple required>
+            <label for="stato">Stato immobile *</label>
+            <select id="stato" required>
+              <option value="" disabled selected>Seleziona stato...</option>
               <option value="Ristrutturato">Ristrutturato</option>
               <option value="Buone condizioni">Buone condizioni</option>
               <option value="Da ristrutturare">Da ristrutturare</option>
@@ -249,10 +241,7 @@
       const tipo = document.getElementById('tipo').value;
       const mq = document.getElementById('mq').value;
       const piano = document.getElementById('piano').value;
-      
-      const statoSelect = document.getElementById('stato');
-      const statoSelected = Array.from(statoSelect.selectedOptions).map(opt => opt.value).join(', ');
-      
+      const stato = document.getElementById('stato').value;
       const note = document.getElementById('note').value;
 
       let message = `*RICHIESTA VALUTAZIONE IMMOBILE*\n\n`;
@@ -261,7 +250,7 @@
       message += `• *Tipologia Casa:* ${tipo}\n`;
       message += `• *Metri Quadri:* ${mq}\n`;
       message += `• *Piano:* ${piano}\n`;
-      message += `• *Stato Immobiliare:* ${statoSelected}\n`;
+      message += `• *Stato immobile:* ${stato}\n`;
       if (note.trim() !== '') {
         message += `• *Note:* ${note}\n`;
       }
